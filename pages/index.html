@@ -17,37 +17,43 @@
 </head>
 
 <body>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <header>
         <div class="logo">Viva Natural</div>
-        <nav>
-            <ul>
-                <li><a href="#quemnossomos">Início</a></li>
-                <li><a href="#temperos">Temperos</a></li>
-                <li><a href="#farinhasefibras">Farinhas</a></li>
-                <li><a href="#frutassecas">Frutas Secas</a></li>
-                <li><a href="#castanhaseOleaginosas">Castanhas</a></li>
-                <li><a href="#cerealEdoces">Cereais</a></li>
-                <li><a href="#chasEinfusoes">Chás</a></li>
-                <li><a href="#condimentosEoutrosIngredientes">Condimentos</a></li>
-            </ul>
 
-            <ul class="social-links">
-                <li class="instagram">
-                    <a href="https://www.instagram.com/vivaa_natural/" class="social-icon">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                </li>
+        <!-- Botão Hamburguer -->
+        <button class="menu-toggle" aria-label="Abrir menu">
+            <i class="fas fa-bars"></i>
+        </button>
 
-                <li class="whatsapp">
-                    <a href="https://wa.me/+551146043416" class="social-icon">
-                        <i class="fab fa-whatsapp"></i>
-                    </a>
-                </li>
-            </ul>
+        <!-- Container do menu -->
+        <div class="menu-container">
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#quemnossomos">Início</a></li>
+                    <li><a href="#temperos">Temperos</a></li>
+                    <li><a href="#farinhasefibras">Farinhas</a></li>
+                    <li><a href="#frutassecas">Frutas Secas</a></li>
+                    <li><a href="#castanhaseOleaginosas">Castanhas</a></li>
+                    <li><a href="#cerealEdoces">Cereais</a></li>
+                    <li><a href="#chasEinfusoes">Chás</a></li>
+                    <li><a href="#condimentosEoutrosIngredientes">Condimentos</a></li>
+                </ul>
 
+                <ul class="social-links">
+                    <li class="instagram">
+                        <a href="https://www.instagram.com/vivaa_natural/" class="social-icon">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </li>
 
-        </nav>
+                    <li class="whatsapp">
+                        <a href="https://wa.me/+551146043416" class="social-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <main>
@@ -307,14 +313,22 @@
         if (whatsappLink) {
             whatsappLink.addEventListener("click", () => openSocialLink("https://wa.me/+551146043416"));
         }
-        if (window.innerWidth <= 768) {
-            // Código para celulares
-            console.log("Usuário está no celular");
-        }
-        window.addEventListener('resize', () => {
-            if (window.innerWidth <= 768) {
-                // Adapte elementos ou lógica aqui
-            }
+        document.addEventListener("DOMContentLoaded", () => {
+            const menuToggle = document.querySelector(".menu-toggle");
+            const menuContainer = document.querySelector(".menu-container");
+
+            menuToggle.addEventListener("click", () => {
+                menuContainer.classList.toggle("active");
+            });
+
+            // (já existente)
+            AOS.init({
+                duration: 1000,
+                easing: 'ease-in-out',
+                once: true
+            });
+
+            // scroll suave, botão topo, social links etc... (seu código continua)
         });
     </script>
 
