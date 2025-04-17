@@ -192,3 +192,15 @@ ul li:hover {
 .scroll-to-top:hover {
     background-color: #218838;
 }
+/* Layout padrão (desktop) */
+.container {
+    width: 1000px;
+  }
+  
+  /* Ajuste para telas pequenas (celulares) */
+  @media (max-width: 768px) {
+    .container {
+      width: 100%;
+      padding: 10px;
+    }
+  }
