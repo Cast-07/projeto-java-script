@@ -14,7 +14,9 @@ body {
 }
 
 /* Estilos para os títulos */
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     font-family: 'Dancing Script', cursive;
     color: #2c6a3b;
 }
@@ -77,23 +79,27 @@ nav ul li a:hover {
 
 .social-links li a {
     color: white;
-    font-size: 1.5rem; /* Tamanho maior para os ícones */
+    font-size: 1.5rem;
+    /* Tamanho maior para os ícones */
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 /* Estilos específicos para os ícones de redes sociais */
 .social-links li a i {
-    margin-right: 10px; /* Espaço entre o ícone e o texto */
+    margin-right: 10px;
+    /* Espaço entre o ícone e o texto */
 }
 
 /* Efeito de hover (alterando cor do ícone) */
 .social-links li a:hover {
-    color: white; /* Cor quando passar o mouse */
+    color: white;
+    /* Cor quando passar o mouse */
 }
 
 .social-links li a:hover i {
-    color: white; /* Altera a cor do ícone */
+    color: white;
+    /* Altera a cor do ícone */
 }
 
 /* Estilos para o conteúdo principal */
@@ -147,7 +153,8 @@ ul li:hover {
     nav ul {
         flex-direction: column;
         gap: 10px;
-        padding: 0 20px; /* Ajusta a navegação para o tamanho da tela */
+        padding: 0 20px;
+        /* Ajusta a navegação para o tamanho da tela */
     }
 
     .social-links {
@@ -192,35 +199,46 @@ ul li:hover {
 .scroll-to-top:hover {
     background-color: #218838;
 }
+
 /* Layout padrão (desktop) */
 .container {
     width: 1000px;
-  }
-  
-  /* Ajuste para telas pequenas (celulares) */
-  @media (max-width: 768px) {
+}
+
+/* Ajuste para telas pequenas (celulares) */
+@media (max-width: 768px) {
     .container {
-      width: 100%;
-      padding: 10px;
+        width: 100%;
+        padding: 10px;
     }
-  }
-  /* Estilo do botão hamburguer */
+}
+
+/* Botão hamburguer */
 .menu-toggle {
     display: none;
     background: none;
     border: none;
     font-size: 2rem;
-    color: #4CAF50;
+    color: white;
     cursor: pointer;
+    z-index: 1001;
+    position: absolute;
+    top: 20px;
+    right: 20px;
 }
 
-/* Container do menu para controlar visibilidade */
+/* Oculta ícone de fechar inicialmente */
+.menu-toggle .fa-times {
+    display: none;
+}
+
+/* Menu container padrão */
 .menu-container {
     display: flex;
     flex-direction: column;
 }
 
-/* Responsividade */
+/* Modo responsivo para tablets e celulares */
 @media (max-width: 768px) {
     .menu-toggle {
         display: block;
@@ -229,26 +247,32 @@ ul li:hover {
     .menu-container {
         display: none;
         width: 100%;
+        background-color: #2c6a3b;
+        padding: 15px 0;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        z-index: 1000;
     }
 
     .menu-container.active {
         display: block;
     }
 
-    nav {
-        width: 100%;
-    }
-
     .nav-links,
     .social-links {
         flex-direction: column;
         align-items: flex-start;
+        padding: 10px 20px;
         gap: 10px;
-        margin: 10px 0;
     }
 
-    .nav-links li,
-    .social-links li {
-        margin-left: 15px;
+    .nav-links li a,
+    .social-links li a {
+        color: white;
+        display: block;
+        width: 100%;
+        padding: 10px 0;
+        text-align: left;
     }
 }
