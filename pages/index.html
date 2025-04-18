@@ -333,52 +333,6 @@
         if (whatsappLink) {
             whatsappLink.addEventListener("click", () => openSocialLink("https://wa.me/+551146043416"));
         }
-        document.addEventListener("DOMContentLoaded", () => {
-            // Inicia o AOS
-            AOS.init({
-                duration: 1000,
-                easing: 'ease-in-out',
-                once: true
-            });
-
-            // Botão voltar ao topo
-            const scrollToTopButton = document.querySelector(".scroll-to-top");
-
-            window.addEventListener("scroll", () => {
-                scrollToTopButton.style.display = window.scrollY > 200 ? "block" : "none";
-            });
-
-            scrollToTopButton.addEventListener("click", () => {
-                window.scrollTo({ top: 0, behavior: "smooth" });
-            });
-
-            // Menu hamburguer
-            const menuToggle = document.querySelector(".menu-toggle");
-            const menuContainer = document.querySelector(".menu-container");
-            const barsIcon = menuToggle.querySelector(".fa-bars");
-            const timesIcon = menuToggle.querySelector(".fa-times");
-
-            menuToggle.addEventListener("click", () => {
-                const isActive = menuContainer.classList.toggle("active");
-                barsIcon.style.display = isActive ? "none" : "inline";
-                timesIcon.style.display = isActive ? "inline" : "none";
-            });
-
-            // Scroll suave e fecha menu
-            document.querySelectorAll(".nav-links a").forEach(link => {
-                link.addEventListener("click", e => {
-                    e.preventDefault();
-                    const targetId = link.getAttribute("href").substring(1);
-                    const section = document.getElementById(targetId);
-                    if (section) {
-                        section.scrollIntoView({ behavior: "smooth" });
-                    }
-                    menuContainer.classList.remove("active");
-                    barsIcon.style.display = "inline";
-                    timesIcon.style.display = "none";
-                });
-            });
-        });
     </script>
 
     <!-- Link para o AOS (Animate On Scroll) JavaScript -->
